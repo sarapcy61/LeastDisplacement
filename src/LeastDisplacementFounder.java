@@ -12,8 +12,12 @@ public class LeastDisplacementFounder {
 
     //constructor --- you can just use one of setStringAndNum() or constructor
     public LeastDisplacementFounder(String string, int num) {
-        this.string = string;
-        this.num = num;
+        if (isValidStatement(string, num)) {
+            this.string = string;
+            this.num = num;
+        } else {
+            throw new IllegalStateException("invalid entry!");
+        }
         init();
     }
 
